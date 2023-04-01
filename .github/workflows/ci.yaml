@@ -42,7 +42,7 @@ jobs:
   nextjs-release:
     if: github.ref == 'refs/heads/main'
     name: Release
-    needs: [build, lint, unit-tests, deploy-docs]
+    needs: [nextjs]
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
