@@ -35,8 +35,8 @@ jobs:
       - name: Deploy preview to Netlify
         uses: jsmrcaga/action-netlify-deploy@v2.0.0
         with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NEXTJS_NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NEXTJS_NETLIFY_SITE_ID }}
           build_directory: NextJS/.next
 
   nextjs-release:
@@ -65,8 +65,8 @@ jobs:
       - name: Deploy preview to Netlify
         uses: jsmrcaga/action-netlify-deploy@v2.0.0
         with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NEXTJS_NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NEXTJS_NETLIFY_SITE_ID }}
           NETLIFY_DEPLOY_MESSAGE: "NextJS prod deploy v${{ github.ref }}"
           NETLIFY_DEPLOY_TO_PROD: true
           build_directory: NextJS/.next
