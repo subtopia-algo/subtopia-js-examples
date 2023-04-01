@@ -109,7 +109,7 @@ export default function Home() {
                                 Login <span>-&gt;</span>
                             </h2>
                             <p className={inter.className}>
-                                Authenticate with PeraWallet
+                                Authenticate with PeraWallet provider
                             </p>
                         </a>
                     )}
