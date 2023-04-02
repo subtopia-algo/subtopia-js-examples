@@ -31,3 +31,27 @@ jobs:
 
       - name: Run build
         run: cd NextJS && yarn build
+
+  vue:
+    name: VueJS check and deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: cd Vue && yarn install --frozen-lockfile
+
+      - name: Run eslint
+        run: cd Vue && yarn lint
+
+      - name: Run prettier
+        run: cd Vue && yarn format:check
+
+      - name: Run build
+        run: cd Vue && yarn build
