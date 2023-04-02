@@ -15,9 +15,9 @@ Welcome to Subtopia JS examples. This repository contains examples of how to use
 
 ### ⚡ Examples
 
-| Name   | Framework | Source Code              | Demo Page |
-| ------ | --------- | ------------------------ | --------- |
-| NextJS | NextJS    | [Link](NextJS/README.md) | TBD       |
-| React  | React     | [Link](React/README.md)  | TBD       |
-| Vue    | Vue       | [Link](Vue/README.md)    | TBD       |
-| Svelte | Svelte    | [Link](Svelte/README.md) | TBD       |
+| Name   | Framework | Source Code              | Demo Page                                            |
+| ------ | --------- | ------------------------ | ---------------------------------------------------- |
+| NextJS | NextJS    | [Link](NextJS/README.md) | [Link](https://subtopia-nextjs-example.netlify.app/) |
+| React  | React     | [Link](React/README.md)  | TBD                                                  |
+| Vue    | Vue       | [Link](Vue/README.md)    | TBD                                                  |
+| Svelte | Svelte    | [Link](Svelte/README.md) | TBD                                                  |
