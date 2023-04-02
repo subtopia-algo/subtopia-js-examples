@@ -49,6 +49,8 @@ jobs:
         run: cd React && yarn install --frozen-lockfile
 
       - name: Run build
+        env:
+            CI: false
         run: cd React && yarn build
 
   vue:
