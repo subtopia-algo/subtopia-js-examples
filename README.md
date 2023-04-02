@@ -21,3 +21,9 @@ Welcome to Subtopia JS examples. This repository contains examples of how to use
 | React  | React     | [Link](React/README.md)  | TBD                                                  |
 | Vue    | Vue       | [Link](Vue/README.md)    | [Link](https://subtopia-vuejs-example.netlify.app)   |
 | Svelte | Svelte    | [Link](Svelte/README.md) | TBD                                                  |
+
+## ⭐️ Stargazers
+
+Special thanks to everyone who starred the repository ❤️
+
+[![Stargazers repo roster for @subtopia-algo/subtopia-js-examples](https://reporoster.com/stars/dark/subtopia-algo/subtopia-js-examples)](https://github.com/subtopia-algo/subtopia-js-examples/stargazers)
