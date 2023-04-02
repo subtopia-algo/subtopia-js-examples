@@ -76,3 +76,25 @@ jobs:
 
       - name: Run build
         run: cd Vue && yarn build
+
+
+  svelte:
+    name: Svelte check and deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: cd Svelte && yarn install --frozen-lockfile
+
+      - name: Run check
+        run: cd Svelte && yarn check
+
+      - name: Run build
+        run: cd Svelte && yarn build
