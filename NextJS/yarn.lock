@@ -67,7 +67,7 @@
   dependencies:
     keyvaluestorage-interface "^1.0.0"
 
-"@json-rpc-tools/utils@^1.7.6":
+"@json-rpc-tools/utils@1.7.6":
   version "1.7.6"
   resolved "https://registry.yarnpkg.com/@json-rpc-tools/utils/-/utils-1.7.6.tgz#67f04987dbaa2e7adb6adff1575367b75a9a9ba1"
   integrity sha512-HjA8x/U/Q78HRRe19yh8HVKoZ+Iaoo3YZjakJYxR+rw52NHo6jM+VE9b8+7ygkCFXl/EHID5wh/MkXaE/jGyYw==
@@ -212,7 +212,7 @@
   resolved "https://registry.yarnpkg.com/@randlabs/communication-bridge/-/communication-bridge-1.0.1.tgz#d1ecfc29157afcbb0ca2d73122d67905eecb5bf3"
   integrity sha512-CzS0U8IFfXNK7QaJFE4pjbxDGfPjbXBEsEaCn9FN15F+ouSAEUQkva3Gl66hrkBZOGexKFEWMwUHIDKpZ2hfVg==
 
-"@randlabs/myalgo-connect@^1.4.2":
+"@randlabs/myalgo-connect@1.4.2":
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/@randlabs/myalgo-connect/-/myalgo-connect-1.4.2.tgz#ce3ad97b3889ea21da75852187511d3f6be0fa05"
   integrity sha512-K9hEyUi7G8tqOp7kWIALJLVbGCByhilcy6123WfcorxWwiE1sbQupPyIU5f3YdQK6wMjBsyTWiLW52ZBMp7sXA==
@@ -231,10 +231,10 @@
   dependencies:
     tslib "^2.4.0"
 
-"@txnlab/use-wallet@1.2.7":
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/@txnlab/use-wallet/-/use-wallet-1.2.7.tgz#3b6ea213f74f5a6a7864e0bf879ddc47ac319d73"
-  integrity sha512-yFvhKYMRGizMw7cdoPWpy07WJBFF6qh7GNPWs2eLumjKWYC2JZcIFp+Cb433/M5z7O3eLtmZWB+29ifllLNatw==
+"@txnlab/use-wallet@1.2.11":
+  version "1.2.11"
+  resolved "https://registry.yarnpkg.com/@txnlab/use-wallet/-/use-wallet-1.2.11.tgz#b7b5d0e455f84e4cb23e0e568ea6d5be28dd491e"
+  integrity sha512-5lrbuPHS2siAw8paC1IrFFwQVlpt11I10JfOy9ebBqz/8Gv6NgQoV1o/YbKwaA6gJ3ILg1c2TCkbBKZhKRYYyQ==
   dependencies:
     immer "^9.0.15"
     zustand "^4.1.4"
@@ -518,7 +518,7 @@ algo-msgpack-with-bigint@^2.1.1:
   resolved "https://registry.yarnpkg.com/algo-msgpack-with-bigint/-/algo-msgpack-with-bigint-2.1.1.tgz#38bb717220525b3ff42232eefdcd9efb9ad405d6"
   integrity sha512-F1tGh056XczEaEAqu7s+hlZUDWwOBT70Eq0lfMpBP2YguSQVyxRbprLq5rELXKQOyOaixTWYhMeMQMzP0U5FoQ==
 
-algorand-walletconnect-qrcode-modal@^1.8.0:
+algorand-walletconnect-qrcode-modal@1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/algorand-walletconnect-qrcode-modal/-/algorand-walletconnect-qrcode-modal-1.8.0.tgz#fa539ca3168a5423fd355e1fe8073dd0bca1b6b1"
   integrity sha512-NQgYnG0yNnyxMfiJxQtQXf3JaqcuE2dfCklugK/kWCse0JYWVAvwmAKfFZ0j597N0rU+YQTWsW+TpHroAnVfnw==
@@ -683,10 +683,10 @@ base64-js@^1.3.1:
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.5.1.tgz#1b1b440160a5bf7ad40b650f095963481903930a"
   integrity sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==
 
-beaker-ts@^0.0.95:
-  version "0.0.95"
-  resolved "https://registry.yarnpkg.com/beaker-ts/-/beaker-ts-0.0.95.tgz#f283bef296506bc15df866216b455037585376d2"
-  integrity sha512-SZOHK3HYWrzJ/Eoc24nHt4avKc2K58gE3ABoORXWv7/J85k6K6dgVW3DnLJJnqNozcaCZzSRsztMu6Uu1rSYzw==
+beaker-ts@^0.1.0:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/beaker-ts/-/beaker-ts-0.1.2.tgz#03381f6ecd11a1dcb82a4d0b100e1feb4ee3d479"
+  integrity sha512-PWjLRdZTsVeClgqwa5HD61UnvRTlJx2mx5Y53Ln4821LN5oJ/nrbhhDEfqOysOmA2+bVQT/B43c8XGjtbMKuOQ==
   dependencies:
     commander "^9.4.0"
     typescript "^4.7.4"
@@ -2760,14 +2760,14 @@ stylis@^4.0.6:
   resolved "https://registry.yarnpkg.com/stylis/-/stylis-4.1.3.tgz#fd2fbe79f5fed17c55269e16ed8da14c84d069f7"
   integrity sha512-GP6WDNWf+o403jrEp9c5jibKavrtLW+/qYGhFxFrG8maXhwTBI7gLLhiBb0o7uFccWN+EOS9aMO6cGHWAO07OA==
 
-subtopia-js@1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/subtopia-js/-/subtopia-js-1.0.7.tgz#7fa5fd804b2bdd40f2975abf973b83fc35a8a558"
-  integrity sha512-q8XKDSLj2quextEIrhis7h0WY1MZ55ZBRngq5ScVPgvB67Vq4ZlKINponO0ijKs4QdEoa6esQeamdl5k9Vz3mg==
+subtopia-js@1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/subtopia-js/-/subtopia-js-1.0.8.tgz#d4d4dd38f2e47452295d03900ba5fbc92b8b3bb2"
+  integrity sha512-H0f45abWMpxhU6wzojMzgvmFIlcLOo7KetQnHiqnLg0Id09HX+ImCd/wP+1eByVG64TSkpfSGA790piWNgRmwQ==
   dependencies:
     algosdk "2.2.0"
     axios "^1.3.4"
-    beaker-ts "^0.0.95"
+    beaker-ts "^0.1.0"
 
 supports-color@^7.1.0:
   version "7.2.0"
