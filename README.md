@@ -15,12 +15,12 @@ Welcome to Subtopia JS examples. This repository contains examples of how to use
 
 ### ⚡ Examples
 
-| Name   | Framework | Source Code              | Demo Page                                            |
-| ------ | --------- | ------------------------ | ---------------------------------------------------- |
-| NextJS | NextJS    | [Link](NextJS/README.md) | [Link](https://subtopia-nextjs-example.netlify.app/) |
-| React  | React     | [Link](React/README.md)  | TBD                                                  |
-| Vue    | Vue       | [Link](Vue/README.md)    | [Link](https://subtopia-vuejs-example.netlify.app)   |
-| Svelte | Svelte    | [Link](Svelte/README.md) | TBD                                                  |
+| Name   | Framework | Source Code              | Demo Page                                           |
+| ------ | --------- | ------------------------ | --------------------------------------------------- |
+| NextJS | NextJS    | [Link](NextJS/README.md) | [Link](https://subtopia-nextjs-example.netlify.app) |
+| React  | React     | [Link](React/README.md)  | [Link](https://subtopia-react-example.netlify.app)  |
+| Vue    | Vue       | [Link](Vue/README.md)    | [Link](https://subtopia-vuejs-example.netlify.app)  |
+| Svelte | Svelte    | [Link](Svelte/README.md) | [Link](https://subtopia-svelte-example.netlify.app) |
 
 ## ⭐️ Stargazers
 
