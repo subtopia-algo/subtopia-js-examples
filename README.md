@@ -19,5 +19,5 @@ Welcome to Subtopia JS examples. This repository contains examples of how to use
 | ------ | --------- | ------------------------ | ---------------------------------------------------- |
 | NextJS | NextJS    | [Link](NextJS/README.md) | [Link](https://subtopia-nextjs-example.netlify.app/) |
 | React  | React     | [Link](React/README.md)  | TBD                                                  |
-| Vue    | Vue       | [Link](Vue/README.md)    | TBD                                                  |
+| Vue    | Vue       | [Link](Vue/README.md)    | [Link](https://subtopia-vuejs-example.netlify.app)   |
 | Svelte | Svelte    | [Link](Svelte/README.md) | TBD                                                  |
