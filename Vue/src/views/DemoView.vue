@@ -25,10 +25,15 @@
 import type { DecodedTransaction, DecodedSignedTransaction, PeraTransaction } from '@/types/node'
 import { PeraWalletConnect } from '@perawallet/connect'
 import algosdk, { Transaction } from 'algosdk'
-import { SubtopiaClient, type SubscriptionRecord, SubscriptionType } from 'subtopia-js'
+import {
+  SubtopiaClient,
+  type SubscriptionRecord,
+  SubscriptionType,
+  SubscriptionExpirationType
+} from 'subtopia-js'
 
 const peraWallet = new PeraWalletConnect()
-const dummySmiID = 168195159
+const dummySmiID = 190521162
 const testNetAlgodClient = new algosdk.Algodv2('', 'https://testnet-api.algonode.cloud', '')
 
 export default {
@@ -135,7 +140,8 @@ export default {
               )
             }
           },
-          smiID: dummySmiID
+          smiID: dummySmiID,
+          expirationType: SubscriptionExpirationType.MONTHLY
         },
         { client: testNetAlgodClient }
       )
