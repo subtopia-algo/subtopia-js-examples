@@ -9,7 +9,7 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "subtopia-js": "1.0.8",
+        "subtopia-js": "2.0.0",
         "@txnlab/use-wallet": "1.2.11",
         "algorand-walletconnect-qrcode-modal": "1.8.0",
         "@randlabs/myalgo-connect": "1.4.2",
