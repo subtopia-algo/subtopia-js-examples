@@ -2935,15 +2935,6 @@ axe-core@^4.6.2:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.6.3.tgz#fc0db6fdb65cc7a80ccf85286d91d64ababa3ece"
   integrity sha512-/BQzOX780JhsxDnPpH4ZiyrJAzcd8AfzFPkv+89veFSr1rcMjuq2JDCwypKaPeB6ljHp9KjXhPpjgCvQlWYuqg==
 
-axios@^1.3.4:
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.3.5.tgz#e07209b39a0d11848e3e341fa087acd71dadc542"
-  integrity sha512-glL/PvG/E+xCWwV8S6nCHcrfg1exGx7vxyUIivIA1iL7BIh6bePylCfVHwp6k13ao7SATxB6imau2kqY+I67kw==
-  dependencies:
-    follow-redirects "^1.15.0"
-    form-data "^4.0.0"
-    proxy-from-env "^1.1.0"
-
 axobject-query@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-3.1.1.tgz#3b6e5c6d4e43ca7ba51c5babf99d22a9c68485e1"
@@ -3102,7 +3093,7 @@ batch@0.6.1:
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
   integrity sha512-x+VAiMRL6UPkx+kudNvxTl6hB2XNNCG2r+7wixVfIYwu/2HKRXimwQyaumLjMveWvT2Hkd/cAJw+QBMfJ/EKVw==
 
-beaker-ts@^0.1.0:
+beaker-ts@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/beaker-ts/-/beaker-ts-0.1.2.tgz#03381f6ecd11a1dcb82a4d0b100e1feb4ee3d479"
   integrity sha512-PWjLRdZTsVeClgqwa5HD61UnvRTlJx2mx5Y53Ln4821LN5oJ/nrbhhDEfqOysOmA2+bVQT/B43c8XGjtbMKuOQ==
@@ -4881,7 +4872,7 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.7.tgz#609f39207cb614b89d0765b477cb2d437fbf9787"
   integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
 
-follow-redirects@^1.0.0, follow-redirects@^1.15.0:
+follow-redirects@^1.0.0:
   version "1.15.2"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.2.tgz#b460864144ba63f2681096f274c4e57026da2c13"
   integrity sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==
@@ -4916,15 +4907,6 @@ form-data@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-3.0.1.tgz#ebd53791b78356a99af9a300d4282c4d5eb9755f"
   integrity sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==
-  dependencies:
-    asynckit "^0.4.0"
-    combined-stream "^1.0.8"
-    mime-types "^2.1.12"
-
-form-data@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/form-data/-/form-data-4.0.0.tgz#93919daeaf361ee529584b9b31664dc12c9fa452"
-  integrity sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==
   dependencies:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
@@ -7914,11 +7896,6 @@ proxy-addr@~2.0.7:
     forwarded "0.2.0"
     ipaddr.js "1.9.1"
 
-proxy-from-env@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/proxy-from-env/-/proxy-from-env-1.1.0.tgz#e102f16ca355424865755d2c9e8ea4f24d58c3e2"
-  integrity sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
-
 psl@^1.1.33:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/psl/-/psl-1.9.0.tgz#d0df2a137f00794565fcaf3b2c00cd09f8d5a5a7"
@@ -9006,14 +8983,13 @@ stylis@^4.0.6:
   resolved "https://registry.yarnpkg.com/stylis/-/stylis-4.1.3.tgz#fd2fbe79f5fed17c55269e16ed8da14c84d069f7"
   integrity sha512-GP6WDNWf+o403jrEp9c5jibKavrtLW+/qYGhFxFrG8maXhwTBI7gLLhiBb0o7uFccWN+EOS9aMO6cGHWAO07OA==
 
-subtopia-js@1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/subtopia-js/-/subtopia-js-1.0.8.tgz#d4d4dd38f2e47452295d03900ba5fbc92b8b3bb2"
-  integrity sha512-H0f45abWMpxhU6wzojMzgvmFIlcLOo7KetQnHiqnLg0Id09HX+ImCd/wP+1eByVG64TSkpfSGA790piWNgRmwQ==
+subtopia-js@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/subtopia-js/-/subtopia-js-2.0.0.tgz#85176e1afc9eeb93185f55550ab73f9320beb045"
+  integrity sha512-3VCed7KakvOp54vRqoapEMsuchtatswY9J4atPzICeosR67H8hfk0DB4wcT1SGXP5bpLJhJHqNmA+4Lif0Tltw==
   dependencies:
     algosdk "2.2.0"
-    axios "^1.3.4"
-    beaker-ts "^0.1.0"
+    beaker-ts "^0.1.2"
 
 sucrase@^3.29.0:
   version "3.32.0"

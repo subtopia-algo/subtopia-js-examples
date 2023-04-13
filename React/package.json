@@ -21,7 +21,7 @@
         "react-dom": "^18.2.0",
         "react-scripts": "5.0.1",
         "react-use": "^17.4.0",
-        "subtopia-js": "1.0.8",
+        "subtopia-js": "2.0.0",
         "typescript": "^5.0.3",
         "web-vitals": "^3.0.0"
     },
