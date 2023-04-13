@@ -2,7 +2,7 @@ import styles from "./Demo.module.css";
 import { useWallet, reconnectProviders } from "@txnlab/use-wallet";
 import { useState, useEffect } from "react";
 import { walletProviders } from "./providers";
-import { SubtopiaClient } from "subtopia-js";
+import { SubscriptionExpirationType, SubtopiaClient } from "subtopia-js";
 import algosdk from "algosdk";
 import { useAsyncRetry } from "react-use";
 
@@ -16,7 +16,7 @@ const testNetAlgodClient = new algosdk.Algodv2(
     ``
 );
 
-const DUMMY_SMI_ID = 168195159;
+const DUMMY_SMI_ID = 190521162;
 
 export default function Home() {
     const { activeAddress, providers, signer } = useWallet();
@@ -119,6 +119,8 @@ export default function Home() {
                                                     signer: signer,
                                                 },
                                                 smiID: DUMMY_SMI_ID,
+                                                expirationType:
+                                                    SubscriptionExpirationType.MONTHLY,
                                             },
                                             { client: testNetAlgodClient }
                                         ).catch(() => {

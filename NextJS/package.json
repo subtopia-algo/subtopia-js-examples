@@ -1,6 +1,6 @@
 {
     "name": "subtopia-nextjs-example",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "private": true,
     "scripts": {
         "dev": "next dev",
@@ -9,10 +9,10 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "subtopia-js": "1.0.8",
+        "@randlabs/myalgo-connect": "1.4.2",
+        "subtopia-js": "2.0.0",
         "@txnlab/use-wallet": "1.2.11",
         "algorand-walletconnect-qrcode-modal": "1.8.0",
-        "@randlabs/myalgo-connect": "1.4.2",
         "@blockshake/defly-connect": "1.1.2",
         "@json-rpc-tools/utils": "1.7.6",
         "algosdk": "2.2.0",
