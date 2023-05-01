@@ -1,6 +1,6 @@
 {
   "name": "subtopia-vue-example",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -17,8 +17,9 @@
     "@json-rpc-tools/utils": "1.7.6",
     "@perawallet/connect": "^1.2.1",
     "algorand-walletconnect-qrcode-modal": "1.8.0",
+    "@randlabs/myalgo-connect": "1.4.2",
     "algosdk": "2.2.0",
-    "subtopia-js": "1.0.8",
+    "subtopia-js": "2.0.0",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },

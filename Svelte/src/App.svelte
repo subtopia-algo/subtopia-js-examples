@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { PeraWalletConnect } from "@perawallet/connect";
-    import { SubtopiaClient } from "subtopia-js";
+    import { SubtopiaClient, SubscriptionExpirationType } from "subtopia-js";
     import algosdk, { Transaction } from "algosdk";
     import type {
         DecodedSignedTransaction,
@@ -10,7 +10,7 @@
     } from "./types/node";
 
     const peraWallet = new PeraWalletConnect();
-    const dummySmiID = 168195159;
+    const dummySmiID = 190521162;
     const testNetAlgodClient = new algosdk.Algodv2(
         ``,
         `https://testnet-api.algonode.cloud`,
@@ -185,6 +185,7 @@
                     },
                 },
                 smiID: dummySmiID,
+                expirationType: SubscriptionExpirationType.MONTHLY,
             },
             { client: testNetAlgodClient }
         )
