@@ -1884,10 +1884,10 @@
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
 
-"@txnlab/use-wallet@1.2.11":
-  version "1.2.11"
-  resolved "https://registry.yarnpkg.com/@txnlab/use-wallet/-/use-wallet-1.2.11.tgz#b7b5d0e455f84e4cb23e0e568ea6d5be28dd491e"
-  integrity sha512-5lrbuPHS2siAw8paC1IrFFwQVlpt11I10JfOy9ebBqz/8Gv6NgQoV1o/YbKwaA6gJ3ILg1c2TCkbBKZhKRYYyQ==
+"@txnlab/use-wallet@1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@txnlab/use-wallet/-/use-wallet-1.3.0.tgz#de3f879964b140d3124850ef64929f5205e2326d"
+  integrity sha512-+TEmF1gd3RDI84vxcZBNrMJgrCLSO3zigatYd+tzbDRiXbGoIG8AnLgiclmub7YyTasSjMuRb+MlzDYqI/oiDA==
   dependencies:
     immer "^9.0.15"
     zustand "^4.1.4"
@@ -2044,9 +2044,9 @@
     "@types/istanbul-lib-report" "*"
 
 "@types/jest@*", "@types/jest@^29.0.0":
-  version "29.5.0"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.5.0.tgz#337b90bbcfe42158f39c2fb5619ad044bbb518ac"
-  integrity sha512-3Emr5VOl/aoBwnWcH/EFQvlSAmjV+XtV9GGu5mwdYew5vhQh0IUZx/60x0TzHDu09Bi7HMx10t/namdJw5QIcg==
+  version "29.5.1"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.5.1.tgz#83c818aa9a87da27d6da85d3378e5a34d2f31a47"
+  integrity sha512-tEuVcHrpaixS36w7hpsfLBLpjtMRJUE09/MHXn923LOVojDwyC14cWcfc0rDs0VEfUyYmt/+iX1kxxp+gZMcaQ==
   dependencies:
     expect "^29.0.0"
     pretty-format "^29.0.0"
@@ -2071,10 +2071,15 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-3.0.1.tgz#5f8f2bca0a5863cb69bc0b0acd88c96cb1d4ae10"
   integrity sha512-Y4XFY5VJAuw0FgAqPNd6NNoV44jbq9Bz2L7Rh/J6jLTiHBSBJa9fxqQIvkIld4GsoDOcCbvzOUAbLPsSKKg+uA==
 
-"@types/node@*", "@types/node@^18.0.0":
-  version "18.15.11"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.15.11.tgz#b3b790f09cb1696cffcec605de025b088fa4225f"
-  integrity sha512-E5Kwq2n4SbMzQOn6wnmBjuK9ouqlURrcZDVfbo9ftDDTFt3nk7ZKK4GMOzoYgnpQJKcxwQw+lGaBvvlMo0qN/Q==
+"@types/node@*":
+  version "20.1.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.1.4.tgz#83f148d2d1f5fe6add4c53358ba00d97fc4cdb71"
+  integrity sha512-At4pvmIOki8yuwLtd7BNHl3CiWNbtclUbNtScGx4OHfBd4/oWoJC8KRCIxXwkdndzhxOsPXihrsOoydxBjlE9Q==
+
+"@types/node@^18.0.0":
+  version "18.16.9"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.16.9.tgz#e79416d778a8714597342bb87efb5a6e914f7a73"
+  integrity sha512-IeB32oIV4oGArLrd7znD2rkHQ6EDCM+2Sr76dJnrHwv9OHBTTM6nuDLK9bmikXzPa0ZlWMWtRGo/Uw4mrzQedA==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -2107,16 +2112,16 @@
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
 
 "@types/react-dom@^18.0.0":
-  version "18.0.11"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.11.tgz#321351c1459bc9ca3d216aefc8a167beec334e33"
-  integrity sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==
+  version "18.2.4"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.2.4.tgz#13f25bfbf4e404d26f62ac6e406591451acba9e0"
+  integrity sha512-G2mHoTMTL4yoydITgOGwWdWMVd8sNgyEP85xVmMKAPUBwQWm9wBPQUmvbeF4V3WBY1P7mmL4BkjQ0SqUpf1snw==
   dependencies:
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^18.0.0":
-  version "18.0.35"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.35.tgz#192061cb1044fe01f2d3a94272cd35dd50502741"
-  integrity sha512-6Laome31HpetaIUGFWl1VQ3mdSImwxtFZ39rh059a1MNnKGqBpC88J6NJ8n/Is3Qx7CefDGLgf/KhN/sYCf7ag==
+  version "18.2.6"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.6.tgz#5cd53ee0d30ffc193b159d3516c8c8ad2f19d571"
+  integrity sha512-wRZClXn//zxCFW+ye/D2qY65UsYP1Fpex2YXorHc8awoNamkMZSvBxwxdYVInsHOZZd2Ppq8isnSzJL5Mpf8OA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -2713,10 +2718,10 @@ algorand-walletconnect-qrcode-modal@1.8.0:
     preact "10.4.1"
     qrcode "1.4.4"
 
-algosdk@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/algosdk/-/algosdk-2.2.0.tgz#12f80b5f68c955b338aa5b9d5fc6cbd64ce6ea7a"
-  integrity sha512-FG3u/60DzjMK9Cffy9itst7WcfsTgZKfsD1r8pT33PfsA7r8NoXiUSL7cf0fNWFus6S3E14BpE2CY64VJ8KV1A==
+algosdk@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/algosdk/-/algosdk-2.3.0.tgz#fcb460b3c311f76fa7908dc14a889ead8054955b"
+  integrity sha512-voxoY2eue2CkzwkTh6UNN5JUeVOBL9qoNX3N/+OYwS2/Xd17ACSs6tLV/6dZumEgPa40ZL8TkO4zQF/ysDpy8w==
   dependencies:
     algo-msgpack-with-bigint "^2.1.1"
     buffer "^6.0.3"
@@ -8983,12 +8988,12 @@ stylis@^4.0.6:
   resolved "https://registry.yarnpkg.com/stylis/-/stylis-4.1.3.tgz#fd2fbe79f5fed17c55269e16ed8da14c84d069f7"
   integrity sha512-GP6WDNWf+o403jrEp9c5jibKavrtLW+/qYGhFxFrG8maXhwTBI7gLLhiBb0o7uFccWN+EOS9aMO6cGHWAO07OA==
 
-subtopia-js@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/subtopia-js/-/subtopia-js-2.0.0.tgz#85176e1afc9eeb93185f55550ab73f9320beb045"
-  integrity sha512-3VCed7KakvOp54vRqoapEMsuchtatswY9J4atPzICeosR67H8hfk0DB4wcT1SGXP5bpLJhJHqNmA+4Lif0Tltw==
+subtopia-js@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/subtopia-js/-/subtopia-js-2.0.1.tgz#510302929cf74ed733685eca0a5660163391de41"
+  integrity sha512-4kDKaRIfiu1cv57s8vNloGsUjgFIpepn4HbThC2V5HK5/KNBogxT5n+T0AGy4kBmbHaNjNe1PJ1Ghxge94KrSg==
   dependencies:
-    algosdk "2.2.0"
+    algosdk "2.3.0"
     beaker-ts "^0.1.2"
 
 sucrase@^3.29.0:
