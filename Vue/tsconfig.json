@@ -6,12 +6,6 @@
     },
     {
       "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.vitest.json"
     }
-  ],
-  "compilerOptions": {
-    "ignoreDeprecations": "5.0",
-  }
+  ]
 }

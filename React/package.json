@@ -4,6 +4,7 @@
     "private": true,
     "dependencies": {
         "@blockshake/defly-connect": "1.1.2",
+        "@daffiwallet/connect": "^1.0.3",
         "@json-rpc-tools/utils": "1.7.6",
         "@perawallet/connect": "1.2.3",
         "@randlabs/myalgo-connect": "1.4.2",
