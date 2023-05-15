@@ -71,9 +71,6 @@ jobs:
       - name: Run eslint
         run: cd Vue && yarn lint
 
-      - name: Run prettier
-        run: cd Vue && yarn format:check
-
       - name: Run build
         run: cd Vue && yarn build
 

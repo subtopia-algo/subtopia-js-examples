@@ -11,8 +11,8 @@
     },
     "dependencies": {
         "@perawallet/connect": "1.2.3",
-        "algosdk": "2.2.0",
-        "subtopia-js": "2.0.0"
+        "algosdk": "2.3.0",
+        "subtopia-js": "2.0.1"
     },
     "devDependencies": {
         "@sveltejs/vite-plugin-svelte": "^2.0.3",
