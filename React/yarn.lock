@@ -1896,13 +1896,13 @@
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
 
-"@txnlab/use-wallet@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@txnlab/use-wallet/-/use-wallet-1.3.0.tgz#de3f879964b140d3124850ef64929f5205e2326d"
-  integrity sha512-+TEmF1gd3RDI84vxcZBNrMJgrCLSO3zigatYd+tzbDRiXbGoIG8AnLgiclmub7YyTasSjMuRb+MlzDYqI/oiDA==
+"@txnlab/use-wallet@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@txnlab/use-wallet/-/use-wallet-2.0.0.tgz#8559be0a0c3075e6d6552268641d2189f5cc0661"
+  integrity sha512-VJ47JT+s6VYAv1rCYYmFv/DrQd+KXDn0IAWvUkBiMVQniYoxt/XrfN8vZ1xnrsF7sVlZpDFPbQiK4TCrmTjncQ==
   dependencies:
     immer "^9.0.15"
-    zustand "^4.1.4"
+    zustand "^4.3.8"
 
 "@types/aria-query@^5.0.1":
   version "5.0.1"
@@ -10150,7 +10150,7 @@ yocto-queue@^0.1.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-zustand@^4.1.4:
+zustand@^4.3.8:
   version "4.3.8"
   resolved "https://registry.yarnpkg.com/zustand/-/zustand-4.3.8.tgz#37113df8e9e1421b0be1b2dca02b49b76210e7c4"
   integrity sha512-4h28KCkHg5ii/wcFFJ5Fp+k1J3gJoasaIbppdgZFO4BPJnsNxL0mQXBSFgOgAdCdBj35aDTPvdAJReTMntFPGg==
