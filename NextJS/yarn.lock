@@ -248,13 +248,13 @@
   dependencies:
     tslib "^2.4.0"
 
-"@txnlab/use-wallet@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.npmjs.org/@txnlab/use-wallet/-/use-wallet-1.3.0.tgz"
-  integrity sha512-+TEmF1gd3RDI84vxcZBNrMJgrCLSO3zigatYd+tzbDRiXbGoIG8AnLgiclmub7YyTasSjMuRb+MlzDYqI/oiDA==
+"@txnlab/use-wallet@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@txnlab/use-wallet/-/use-wallet-2.2.0.tgz#727bf4d33cce6c5dd28ebe267676b8ce0dbf8b0c"
+  integrity sha512-r2wQsJGTz/fBkVpYYjVObXjRr/hlWAnp4PalorWqhQ2Rf/NykhM24B0sTEdGFPj+59dbj+ZMjLYdNC8n8Ue8+A==
   dependencies:
     immer "^9.0.15"
-    zustand "^4.1.4"
+    zustand "^4.3.8"
 
 "@types/js-cookie@^2.2.6":
   version "2.2.7"
@@ -2808,9 +2808,9 @@ zod@3.21.4:
   resolved "https://registry.npmjs.org/zod/-/zod-3.21.4.tgz"
   integrity sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==
 
-zustand@^4.1.4:
-  version "4.3.7"
-  resolved "https://registry.npmjs.org/zustand/-/zustand-4.3.7.tgz"
-  integrity sha512-dY8ERwB9Nd21ellgkBZFhudER8KVlelZm8388B5nDAXhO/+FZDhYMuRnqDgu5SYyRgz/iaf8RKnbUs/cHfOGlQ==
+zustand@^4.3.8:
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-4.4.3.tgz#1d54cf7fa4507ad8bf58e2f13e08ddc8a6730128"
+  integrity sha512-oRy+X3ZazZvLfmv6viIaQmtLOMeij1noakIsK/Y47PWYhT8glfXzQ4j0YcP5i0P0qI1A4rIB//SGROGyZhx91A==
   dependencies:
     use-sync-external-store "1.2.0"
