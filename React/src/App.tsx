@@ -1,9 +1,17 @@
+import { PeraWalletConnect } from "@perawallet/connect";
 import "./App.css";
 import Demo from "./Demo";
-import { WalletProvider } from "@txnlab/use-wallet";
-import { walletProviders } from "./providers";
+import {
+    PROVIDER_ID,
+    WalletProvider,
+    useInitializeProviders,
+} from "@txnlab/use-wallet";
 
 function App() {
+    const providers = useInitializeProviders({
+        providers: [{ id: PROVIDER_ID.PERA, clientStatic: PeraWalletConnect }],
+    });
+
     return (
         <>
             <head>
@@ -19,7 +27,7 @@ function App() {
                 <link rel="icon" href="/favicon.ico" />
             </head>
 
-            <WalletProvider value={walletProviders}>
+            <WalletProvider value={providers}>
                 <Demo />
             </WalletProvider>
         </>

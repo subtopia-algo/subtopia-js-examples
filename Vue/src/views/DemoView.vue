@@ -29,11 +29,13 @@ import {
   SubtopiaClient,
   type SubscriptionRecord,
   SubscriptionType,
-  SubscriptionExpirationType
+  SUBTOPIA_REGISTRY_ID,
+  ChainType,
+  Duration
 } from 'subtopia-js'
 
 const peraWallet = new PeraWalletConnect()
-const dummySmiID = 190521162
+const dummySmiID = 481312144
 const testNetAlgodClient = new algosdk.Algodv2('', 'https://testnet-api.algonode.cloud', '')
 
 export default {
@@ -42,7 +44,8 @@ export default {
     return {
       accountAddress: null as string | null,
       subscription: null as SubscriptionRecord | null,
-      loading: false
+      loading: false,
+      subtopiaClient: null as SubtopiaClient | null
     }
   },
   computed: {
@@ -57,16 +60,36 @@ export default {
   },
   watch: {
     accountAddress: {
-      handler() {
+      async handler() {
         this.fetchSubscriptionRecord()
+        await this.initializeSubtopia()
       },
       immediate: true
     }
   },
-  async created() {
+  async onMounted() {
     await this.initializePeraWallet()
   },
   methods: {
+    async initializeSubtopia() {
+      this.subtopiaClient = await SubtopiaClient.init({
+        algodClient: testNetAlgodClient,
+        registryID: SUBTOPIA_REGISTRY_ID(ChainType.TESTNET),
+        productID: dummySmiID,
+        creator: {
+          addr: this.accountAddress ?? '',
+          signer: (txnGroup: Transaction[], indexesToSign: number[]) => {
+            const txnBlobs: Array<Uint8Array> = txnGroup.map(algosdk.encodeUnsignedTransaction)
+            return this.signTransactionsWithPera(
+              [this.accountAddress!],
+              txnBlobs,
+              indexesToSign,
+              false
+            )
+          }
+        }
+      })
+    },
     async initializePeraWallet() {
       try {
         const accounts = await peraWallet.reconnectSession()
@@ -109,12 +132,11 @@ export default {
     async fetchSubscriptionRecord() {
       if (this.accountAddress) {
         try {
-          const res = await SubtopiaClient.getSubscriptionRecordForAccount(
-            testNetAlgodClient,
-            this.accountAddress,
-            dummySmiID
-          )
-          this.subscription = res
+          const res = await this.subtopiaClient?.getSubscription({
+            algodClient: testNetAlgodClient,
+            subscriberAddress: this.accountAddress
+          })
+          this.subscription = res ?? null
         } catch (e) {
           console.log(e)
           this.subscription = null
@@ -125,26 +147,22 @@ export default {
       return this.subscription
     },
     async subscribeToSubtopia() {
-      return await SubtopiaClient.subscribe(
-        {
-          subscriber: {
-            address: this.accountAddress as string,
-            signer: (txnGroup: Transaction[], indexesToSign: number[]) => {
-              const txnBlobs: Array<Uint8Array> = txnGroup.map(algosdk.encodeUnsignedTransaction)
+      return await this.subtopiaClient?.createSubscription({
+        subscriber: {
+          addr: this.accountAddress as string,
+          signer: (txnGroup: Transaction[], indexesToSign: number[]) => {
+            const txnBlobs: Array<Uint8Array> = txnGroup.map(algosdk.encodeUnsignedTransaction)
 
-              return this.signTransactionsWithPera(
-                [this.accountAddress!],
-                txnBlobs,
-                indexesToSign,
-                false
-              )
-            }
-          },
-          smiID: dummySmiID,
-          expirationType: SubscriptionExpirationType.MONTHLY
+            return this.signTransactionsWithPera(
+              [this.accountAddress!],
+              txnBlobs,
+              indexesToSign,
+              false
+            )
+          }
         },
-        { client: testNetAlgodClient }
-      )
+        duration: Duration.MONTH
+      })
     },
     async signTransactionsWithPera(
       connectedAccounts: string[],

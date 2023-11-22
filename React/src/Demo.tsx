@@ -1,8 +1,12 @@
 import styles from "./Demo.module.css";
-import { useWallet, reconnectProviders } from "@txnlab/use-wallet";
+import { useWallet } from "@txnlab/use-wallet";
 import { useState, useEffect } from "react";
-import { walletProviders } from "./providers";
-import { SubscriptionExpirationType, SubtopiaClient } from "subtopia-js";
+import {
+    ChainType,
+    Duration,
+    SUBTOPIA_REGISTRY_ID,
+    SubtopiaClient,
+} from "subtopia-js";
 import algosdk from "algosdk";
 import { useAsyncRetry } from "react-use";
 
@@ -16,29 +20,52 @@ const testNetAlgodClient = new algosdk.Algodv2(
     ``
 );
 
-const DUMMY_SMI_ID = 190521162;
+const DUMMY_SMI_ID = 481312144;
 
 export default function Home() {
     const { activeAddress, providers, signer } = useWallet();
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [_, setLoggedIn] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false);
+    const [subtopiaClient, setSubtopiaClient] =
+        useState<SubtopiaClient | null>();
 
     const subscriptionResponse = useAsyncRetry(async () => {
-        if (!activeAddress) {
+        if (!activeAddress || !subtopiaClient) {
             return undefined;
         }
 
-        return await SubtopiaClient.getSubscriptionRecordForAccount(
-            testNetAlgodClient,
-            activeAddress,
-            DUMMY_SMI_ID
-        );
+        return await subtopiaClient.getSubscription({
+            algodClient: testNetAlgodClient,
+            subscriberAddress: activeAddress,
+        });
     }, [activeAddress]);
 
     useEffect(() => {
-        reconnectProviders(walletProviders);
-    }, []);
+        // async method to init and set subtopia
+        const initSubtopiaClient = async () => {
+            if (!activeAddress || !signer) {
+                return;
+            }
+
+            const client = await SubtopiaClient.init({
+                algodClient: testNetAlgodClient,
+                productID: DUMMY_SMI_ID,
+                registryID: SUBTOPIA_REGISTRY_ID(ChainType.TESTNET),
+                creator: {
+                    addr: activeAddress,
+                    signer: signer,
+                },
+            });
+
+            setSubtopiaClient(client);
+            subscriptionResponse.retry();
+        };
+
+        if (!subtopiaClient) {
+            initSubtopiaClient();
+        }
+    });
 
     return (
         <>
@@ -101,45 +128,42 @@ export default function Home() {
 
                     {loading && <p>Loading! Please sign transactions...</p>}
 
-                    {!subscriptionResponse.value && activeAddress && (
-                        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                        <a
-                            className={styles.card}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={async () => {
-                                if (!loading) {
-                                    setLoading(true);
+                    {!subscriptionResponse.value &&
+                        subtopiaClient &&
+                        activeAddress && (
+                            // eslint-disable-next-line jsx-a11y/anchor-is-valid
+                            <a
+                                className={styles.card}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={async () => {
+                                    if (!loading) {
+                                        setLoading(true);
 
-                                    const response =
-                                        await SubtopiaClient.subscribe(
-                                            {
+                                        await subtopiaClient
+                                            .createSubscription({
                                                 subscriber: {
-                                                    address: activeAddress,
+                                                    addr: activeAddress,
                                                     signer: signer,
                                                 },
-                                                smiID: DUMMY_SMI_ID,
-                                                expirationType:
-                                                    SubscriptionExpirationType.MONTHLY,
-                                            },
-                                            { client: testNetAlgodClient }
-                                        ).catch(() => {
-                                            setLoading(false);
-                                        });
+                                                duration: Duration.MONTH,
+                                            })
+                                            .catch(() => {
+                                                setLoading(false);
+                                            });
 
-                                    console.log(response);
-                                    subscriptionResponse.retry();
+                                        subscriptionResponse.retry();
 
-                                    setLoading(false);
-                                }
-                            }}
-                        >
-                            <h2>
-                                Purchase subscription <span>-&gt;</span>
-                            </h2>
-                            <p>Purchase dummy subtopia subscription</p>
-                        </a>
-                    )}
+                                        setLoading(false);
+                                    }
+                                }}
+                            >
+                                <h2>
+                                    Purchase subscription <span>-&gt;</span>
+                                </h2>
+                                <p>Purchase dummy subtopia subscription</p>
+                            </a>
+                        )}
 
                     {activeAddress && providers && (
                         // eslint-disable-next-line jsx-a11y/anchor-is-valid

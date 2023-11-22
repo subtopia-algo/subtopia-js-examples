@@ -1,0 +1,36 @@
+{
+    "folders": [
+        {
+            "name": "Vue",
+            "path": "./Vue"
+        },
+        {
+            "name": "Svelte",
+            "path": "./Svelte"
+        },
+        {
+            "name": "React",
+            "path": "./React"
+        },
+        {
+            "name": "NextJS",
+            "path": "./NextJS"
+        }
+    ],
+    "settings": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+        }
+    },
+    "extensions": {
+        "recommendations": [
+            "Vue.volar",
+            "Vue.vscode-typescript-vue-plugin",
+            "svelte.svelte-vscode",
+            "dbaeumer.vscode-eslint",
+            "esbenp.prettier-vscode"
+        ]
+    }
+}
