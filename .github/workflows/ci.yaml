@@ -1,97 +1,103 @@
 name: CI
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
-  nextjs:
-    name: NextJS check and deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
+    nextjs:
+        name: NextJS check and deploy
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v4
 
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+            - name: Setup node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 18
+                  cache: npm
+                  cache-dependency-path: NextJS/package-lock.json
 
-      - name: Install dependencies
-        run: cd NextJS && yarn install --frozen-lockfile
+            - name: Install dependencies
+              run: cd NextJS && npm ci
 
-      - name: Run build
-        run: cd NextJS && yarn build
+            - name: Run build
+              run: cd NextJS && npm run build
 
+    react:
+        name: React check and deploy
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v4
 
-  react:
-    name: React check and deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
+            - name: Setup node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 18
+                  cache: npm
+                  cache-dependency-path: React/package-lock.json
 
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+            - name: Install dependencies
+              run: cd React && npm ci
 
-      - name: Install dependencies
-        run: cd React && yarn install --frozen-lockfile
+            - name: Run build
+              env:
+                  CI: false
+              run: cd React && npm run build
 
-      - name: Run build
-        env:
-            CI: false
-        run: cd React && yarn build
+    vue:
+        name: VueJS check and deploy
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v4
 
-  vue:
-    name: VueJS check and deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
+            - name: Setup node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 18
+                  cache: npm
+                  cache-dependency-path: Vue/package-lock.json
 
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+            - name: Install dependencies
+              run: cd Vue && npm ci
 
-      - name: Install dependencies
-        run: cd Vue && yarn install --frozen-lockfile
+            - name: Run eslint
+              run: cd Vue && npm run lint
 
-      - name: Run eslint
-        run: cd Vue && yarn lint
+            - name: Run build
+              run: cd Vue && npm run build
 
-      - name: Run build
-        run: cd Vue && yarn build
+    svelte:
+        name: Svelte check and deploy
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v4
 
+            - name: Setup node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 18
+                  cache: npm
+                  cache-dependency-path: Svelte/package-lock.json
 
-  svelte:
-    name: Svelte check and deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
+            - name: Install dependencies
+              run: cd Svelte && npm ci
 
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+            - name: Run check
+              run: cd Svelte && npm run check
 
-      - name: Install dependencies
-        run: cd Svelte && yarn install --frozen-lockfile
-
-      - name: Run check
-        run: cd Svelte && yarn check
-
-      - name: Run build
-        run: cd Svelte && yarn build
+            - name: Run build
+              run: cd Svelte && npm run build

@@ -1,16 +1,21 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { PeraWalletConnect } from "@perawallet/connect";
-    import { SubtopiaClient, SubscriptionExpirationType } from "subtopia-js";
+    import {
+        SubtopiaClient,
+        Duration,
+        type SubscriptionRecord,
+    } from "subtopia-js";
     import algosdk, { Transaction } from "algosdk";
     import type {
         DecodedSignedTransaction,
         DecodedTransaction,
         PeraTransaction,
     } from "./types/node";
+    import { SUBTOPIA_REGISTRY_ID, ChainType } from "subtopia-js";
 
     const peraWallet = new PeraWalletConnect();
-    const dummySmiID = 190521162;
+    const dummySmiID = 481312144;
     const testNetAlgodClient = new algosdk.Algodv2(
         ``,
         `https://testnet-api.algonode.cloud`,
@@ -18,23 +23,56 @@
     );
 
     let accountAddress = "";
-    let subscriptionBox = null;
+    let subtopiaClient: SubtopiaClient | null = null;
+    let subscriptionBox: SubscriptionRecord | null = null;
     let loading = false;
 
-    onMount(() => {
+    // Reactive statement to initialize subtopiaClient whenever accountAddress changes
+    $: if (accountAddress) {
+        (async () => {
+            subtopiaClient = await SubtopiaClient.init({
+                algodClient: testNetAlgodClient,
+                registryID: SUBTOPIA_REGISTRY_ID(ChainType.TESTNET),
+                productID: dummySmiID,
+                creator: {
+                    addr: accountAddress,
+                    signer: (
+                        txnGroup: Transaction[],
+                        indexesToSign: number[]
+                    ) => {
+                        const txnBlobs: Array<Uint8Array> = txnGroup.map(
+                            algosdk.encodeUnsignedTransaction
+                        );
+                        return signTransactionsWithPera(
+                            [accountAddress],
+                            txnBlobs,
+                            indexesToSign,
+                            false
+                        );
+                    },
+                },
+            });
+
+            await loadBoxStatus();
+        })();
+    }
+
+    onMount(async () => {
         // Reconnect to the session when the component is mounted
         peraWallet
             .reconnectSession()
-            .then((accounts) => {
+            .then(async (accounts) => {
                 // Setup the disconnect event listener
-                peraWallet.connector.on(
-                    "disconnect",
-                    handleDisconnectWalletClick
-                );
+                if (peraWallet.connector) {
+                    peraWallet.connector.on(
+                        "disconnect",
+                        handleDisconnectWalletClick
+                    );
+                }
 
                 if (accounts.length) {
                     setAccountAddress(accounts[0]);
-                    loadBoxStatus();
+                    await loadBoxStatus();
                 }
             })
             .catch((e) => console.log(e));
@@ -45,10 +83,12 @@
             .connect()
             .then((newAccounts) => {
                 // Setup the disconnect event listener
-                peraWallet.connector.on(
-                    "disconnect",
-                    handleDisconnectWalletClick
-                );
+                if (peraWallet.connector) {
+                    peraWallet.connector.on(
+                        "disconnect",
+                        handleDisconnectWalletClick
+                    );
+                }
                 setAccountAddress(newAccounts[0]);
                 loadBoxStatus();
             })
@@ -71,23 +111,24 @@
             });
     }
 
-    function loadBoxStatus() {
+    async function loadBoxStatus() {
         if (!accountAddress) {
             return;
         }
 
-        SubtopiaClient.getSubscriptionRecordForAccount(
-            testNetAlgodClient,
-            accountAddress,
-            dummySmiID
-        ).then((record) => {
-            if (record) {
-                subscriptionBox = record;
-                console.log("Subscribed", subscriptionBox);
-            } else {
-                console.log("Not subscribed");
-            }
-        });
+        await subtopiaClient
+            ?.getSubscription({
+                algodClient: testNetAlgodClient,
+                subscriberAddress: accountAddress,
+            })
+            .then((record: SubscriptionRecord) => {
+                if (record) {
+                    subscriptionBox = record;
+                    console.log("Subscribed", subscriptionBox);
+                } else {
+                    console.log("Not subscribed");
+                }
+            });
     }
 
     async function signTransactionsWithPera(
@@ -159,15 +200,15 @@
         return signedTxns;
     }
 
-    function purchaseClick() {
+    async function purchaseClick() {
         if (!loading) {
             loading = true;
         }
 
-        SubtopiaClient.subscribe(
-            {
+        await subtopiaClient
+            ?.createSubscription({
                 subscriber: {
-                    address: accountAddress,
+                    addr: accountAddress as string,
                     signer: (
                         txnGroup: Transaction[],
                         indexesToSign: number[]
@@ -177,20 +218,17 @@
                         );
 
                         return signTransactionsWithPera(
-                            [this.accountAddress!],
+                            [accountAddress!],
                             txnBlobs,
                             indexesToSign,
                             false
                         );
                     },
                 },
-                smiID: dummySmiID,
-                expirationType: SubscriptionExpirationType.MONTHLY,
-            },
-            { client: testNetAlgodClient }
-        )
-            .then(() => {
-                loadBoxStatus();
+                duration: Duration.MONTH,
+            })
+            .then(async () => {
+                await loadBoxStatus();
                 loading = false;
             })
             .catch((e) => {
@@ -199,8 +237,8 @@
             });
     }
 
-    function setAccountAddress(address) {
-        accountAddress = address;
+    function setAccountAddress(address: string | null) {
+        accountAddress = address ?? "";
     }
 </script>
 
