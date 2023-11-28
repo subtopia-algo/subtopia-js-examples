@@ -613,9 +613,9 @@
   resolved "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.15.tgz"
   integrity sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==
 
-"@types/node@^18.18.13":
+"@types/node@^18.16.8":
   version "18.18.13"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.18.13.tgz#ae0f76c0bfe79d8fad0f910b78ae3e59b333c6e8"
+  resolved "https://registry.npmjs.org/@types/node/-/node-18.18.13.tgz"
   integrity sha512-vXYZGRrSCreZmq1rEjMRLXJhiy8MrIeVasx+PCVlP414N7CJLHnMf+juVvjdprHyH+XRy3zKZLHeNueOpJCn0g==
   dependencies:
     undici-types "~5.26.4"
@@ -3124,10 +3124,10 @@ strip-json-comments@^3.1.1:
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.1.1.tgz"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
 
-subtopia-js@^3.0.0-beta.34:
-  version "3.0.0-beta.34"
-  resolved "https://registry.npmjs.org/subtopia-js/-/subtopia-js-3.0.0-beta.34.tgz"
-  integrity sha512-/9xOVQ8fUZlQfmxYxlM4DlfpWK3O+ZoDXy2Yf2emsy3Q65k8ybgyrRJpIwt9GZJOsuDl9e2HgNY66qHJGefVCA==
+subtopia-js@^3.0.0-beta.35:
+  version "3.0.0-beta.35"
+  resolved "https://registry.yarnpkg.com/subtopia-js/-/subtopia-js-3.0.0-beta.35.tgz#9cc8b595c5c2239f32f849a23712d4c60c3ee7d0"
+  integrity sha512-XAZhR68JXKwiyNUhfipnud7yfuow/7MbB5KHBG4ypYQraNsLzRUmjwbwmUE5SACpqPIsJGNXF9EG+85mpXV+EQ==
 
 supports-color@^5.3.0:
   version "5.5.0"
@@ -3253,7 +3253,7 @@ unbox-primitive@^1.0.2:
 
 undici-types@~5.26.4:
   version "5.26.5"
-  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-5.26.5.tgz#bcd539893d00b56e964fd2657a4866b221a65617"
+  resolved "https://registry.npmjs.org/undici-types/-/undici-types-5.26.5.tgz"
   integrity sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==
 
 untildify@^4.0.0:
