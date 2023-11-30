@@ -22,7 +22,7 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-use": "^17.4.0",
-        "subtopia-js": "^3.0.0-beta.34",
+        "subtopia-js-sdk": "^1.0.0",
         "typescript": "^5.1.3"
     }
 }

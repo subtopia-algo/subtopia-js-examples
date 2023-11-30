@@ -32,10 +32,10 @@ import {
   SUBTOPIA_REGISTRY_ID,
   ChainType,
   Duration
-} from 'subtopia-js'
+} from 'subtopia-js-sdk'
 
 const peraWallet = new PeraWalletConnect()
-const dummySmiID = 481312144
+const dummySmiID = 487827764
 const testNetAlgodClient = new algosdk.Algodv2('', 'https://testnet-api.algonode.cloud', '')
 
 export default {
@@ -74,6 +74,7 @@ export default {
     async initializeSubtopia() {
       this.subtopiaClient = await SubtopiaClient.init({
         algodClient: testNetAlgodClient,
+        chainType: ChainType.TESTNET,
         registryID: SUBTOPIA_REGISTRY_ID(ChainType.TESTNET),
         productID: dummySmiID,
         creator: {

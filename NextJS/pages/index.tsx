@@ -9,7 +9,7 @@ import {
     Duration,
     SUBTOPIA_REGISTRY_ID,
     SubtopiaClient,
-} from "subtopia-js";
+} from "subtopia-js-sdk";
 import algosdk from "algosdk";
 import { useAsyncRetry } from "react-use";
 
@@ -25,7 +25,7 @@ const testNetAlgodClient = new algosdk.Algodv2(
     ``
 );
 
-const DUMMY_SMI_ID = 481312144;
+const DUMMY_SMI_ID = 487827764;
 
 export default function Home() {
     const { activeAddress, providers, signer } = useWallet();
@@ -55,6 +55,7 @@ export default function Home() {
             const client = await SubtopiaClient.init({
                 algodClient: testNetAlgodClient,
                 productID: DUMMY_SMI_ID,
+                chainType: ChainType.TESTNET,
                 registryID: SUBTOPIA_REGISTRY_ID(ChainType.TESTNET),
                 creator: {
                     addr: activeAddress,

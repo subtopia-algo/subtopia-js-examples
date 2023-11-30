@@ -12,7 +12,7 @@
     "dependencies": {
         "@perawallet/connect": "^1.3.3",
         "algosdk": "^2.7.0",
-        "subtopia-js": "^3.0.0-beta.34"
+        "subtopia-js-sdk": "^1.0.0"
     },
     "devDependencies": {
         "@sveltejs/vite-plugin-svelte": "^3.0.1",
