@@ -5,17 +5,17 @@
         SubtopiaClient,
         Duration,
         type SubscriptionRecord,
-    } from "subtopia-js";
+    } from "subtopia-js-sdk";
     import algosdk, { Transaction } from "algosdk";
     import type {
         DecodedSignedTransaction,
         DecodedTransaction,
         PeraTransaction,
     } from "./types/node";
-    import { SUBTOPIA_REGISTRY_ID, ChainType } from "subtopia-js";
+    import { SUBTOPIA_REGISTRY_ID, ChainType } from "subtopia-js-sdk";
 
     const peraWallet = new PeraWalletConnect();
-    const dummySmiID = 481312144;
+    const dummySmiID = 487827764;
     const testNetAlgodClient = new algosdk.Algodv2(
         ``,
         `https://testnet-api.algonode.cloud`,
@@ -32,6 +32,7 @@
         (async () => {
             subtopiaClient = await SubtopiaClient.init({
                 algodClient: testNetAlgodClient,
+                chainType: ChainType.TESTNET,
                 registryID: SUBTOPIA_REGISTRY_ID(ChainType.TESTNET),
                 productID: dummySmiID,
                 creator: {
