@@ -538,6 +538,11 @@
     picocolors "^1.0.0"
     tslib "^2.6.0"
 
+"@rolldown/pluginutils@1.0.0-beta.29":
+  version "1.0.0-beta.29"
+  resolved "https://registry.npmjs.org/@rolldown/pluginutils/-/pluginutils-1.0.0-beta.29.tgz"
+  integrity sha512-NIJgOsMjbxAXvoGq/X0gD7VPMQ8j9g0BiDaNjVNVjvl+iKXxL3Jre0v31RmBYeLEmkbj2s02v8vFTbUXi5XS2Q==
+
 "@rollup/rollup-android-arm-eabi@4.5.1":
   version "4.5.1"
   resolved "https://registry.npmjs.org/@rollup/rollup-android-arm-eabi/-/rollup-android-arm-eabi-4.5.1.tgz"
@@ -598,9 +603,9 @@
   resolved "https://registry.npmjs.org/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.5.1.tgz"
   integrity sha512-5I3Nz4Sb9TYOtkRwlH0ow+BhMH2vnh38tZ4J4mggE48M/YyJyp/0sPSxhw1UeS1+oBgQ8q7maFtSeKpeRJu41Q==
 
-"@rushstack/eslint-patch@^1.6.1":
+"@rushstack/eslint-patch@^1.2.0":
   version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.6.1.tgz#9ab8f811930d7af3e3d549183a50884f9eb83f36"
+  resolved "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.6.1.tgz"
   integrity sha512-UY+FGM/2jjMkzQLn8pxcHGMaVLh9aEitG3zY2CiY7XHdLiz3bZOwa6oDxNqEMv7zZkV+cj5DOdz0cQ1BP5Hjgw==
 
 "@tsconfig/node18@^18.0.0":
@@ -724,10 +729,12 @@
     "@babel/plugin-transform-typescript" "^7.23.3"
     "@vue/babel-plugin-jsx" "^1.1.5"
 
-"@vitejs/plugin-vue@^4.5.0":
-  version "4.5.2"
-  resolved "https://registry.npmjs.org/@vitejs/plugin-vue/-/plugin-vue-4.5.2.tgz"
-  integrity sha512-UGR3DlzLi/SaVBPX0cnSyE37vqxU3O6chn8l0HJNzQzDia6/Au2A4xKv+iIJW8w2daf80G7TYHhi1pAUjdZ0bQ==
+"@vitejs/plugin-vue@^6.0.0":
+  version "6.0.1"
+  resolved "https://registry.npmjs.org/@vitejs/plugin-vue/-/plugin-vue-6.0.1.tgz"
+  integrity sha512-+MaE752hU0wfPFJEUAIxqw18+20euHHdxVtMvbFcOEpjEyfqXH/5DCoTHiVJ0J29EhTJdoTkjEv5YBKU9dnoTw==
+  dependencies:
+    "@rolldown/pluginutils" "1.0.0-beta.29"
 
 "@volar/language-core@1.11.1", "@volar/language-core@~1.11.1":
   version "1.11.1"
