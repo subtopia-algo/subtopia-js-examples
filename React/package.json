@@ -18,7 +18,7 @@
         "react-scripts": "^5.0.1",
         "react-use": "^17.4.0",
         "subtopia-js": "^3.0.0-beta.34",
-        "typescript": "^4",
+        "typescript": "^5.0.0",
         "web-vitals": "^3.0.0"
     },
     "scripts": {
